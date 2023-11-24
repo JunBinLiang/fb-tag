@@ -70,7 +70,6 @@ class Solution {
                         else {
                             graph[nxt].add(u);
                         }
-
                         continue;
                     }
 
@@ -94,9 +93,6 @@ class Solution {
             
             times++;
         }
-        
-        //System.out.println(frontQ);
-        //System.out.println(endQ);
         
         if(res == INF) return ans;
         
