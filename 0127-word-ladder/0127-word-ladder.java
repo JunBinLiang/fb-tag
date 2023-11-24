@@ -6,7 +6,7 @@ class Solution {
         }
         int n = a.size();
         a.add(s);
-        List<Integer> g[] = new ArrayList[n + 2];
+        List<Integer> g[] = new ArrayList[n + 1];
         Arrays.setAll(g, e -> new ArrayList<>());
         
         for(int i = 0; i < a.size(); i++) {
@@ -20,7 +20,7 @@ class Solution {
         
         Queue<Integer> q = new LinkedList<>();
         q.add(n);
-        int d[] = new int[n + 2];
+        int d[] = new int[n + 1];
         Arrays.fill(d, INF);
         d[n] = 1;
         while(q.size() > 0) {
