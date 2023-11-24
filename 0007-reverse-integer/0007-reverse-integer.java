@@ -6,10 +6,8 @@ class Solution {
         if(x < 0) {
             return -reverse(-x);
         }
-        int res = 0;
-        int MAX = Integer.MAX_VALUE;
-        int MIN = Integer.MIN_VALUE;
         
+        int res = 0;
         while(x > 0) {
             int d = x % 10;
             x /= 10;
