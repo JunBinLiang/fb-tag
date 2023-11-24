@@ -1,10 +1,6 @@
 class Solution {
     final int INF = 1000000000;
     public int ladderLength(String s, String t, List<String> a) {
-        if(s.equals(t)) {
-            return 0;
-        }
-        
         int n = a.size();
         a.add(s);
         Set<Integer> frontSet = new HashSet<>();
@@ -13,7 +9,6 @@ class Solution {
             frontSet.add(i);
             endSet.add(i);
         }
-        
         
         Queue<Integer> frontQ = new LinkedList<>();
         Queue<Integer> endQ = new LinkedList<>();
@@ -56,7 +51,6 @@ class Solution {
             for(int nxt : curS) {
                 if(!connect(a.get(u), a.get(nxt))) continue;
                 if(!otherS.contains(nxt)) {
-                    //System.out.println(u + "  " + nxt + "     |" + D1[u] + "  "+ D2[nxt]);
                     res = Math.min(res, D1[u] + D2[nxt]);
                     continue;
                 }
