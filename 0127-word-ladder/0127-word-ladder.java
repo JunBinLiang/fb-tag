@@ -18,27 +18,52 @@ class Solution {
             }
         }
         
-        Queue<Integer> q = new LinkedList<>();
-        q.add(n);
-        int d[] = new int[n + 1];
-        Arrays.fill(d, INF);
-        d[n] = 1;
-        while(q.size() > 0) {
-            int u = q.poll();
-            for(int nxt : g[u]) {
-                if(d[nxt] > d[u] + 1) {
-                    d[nxt] = d[u] + 1;
-                    q.add(nxt);
-                }
+        Queue<Integer> frontQ = new LinkedList<>();
+        Queue<Integer> endQ = new LinkedList<>();
+        int d1[] = new int[n + 1]; int d2[] = new int[n + 1];
+        Arrays.fill(d1, INF); Arrays.fill(d2, INF);
+        d1[n] = 1;
+        frontQ.add(n);
+        for(int i = 0; i < n; i++) {
+            if(a.get(i).equals(t)) {
+                endQ.add(i);
+                d2[i] = 1;
+                break;
             }
         }
         
+        int times = 1;
         int res = INF;
-        for(int i = 0; i < n; i++) {
-            if(a.get(i).equals(t)) {
-                res = Math.min(res, d[i]);
+        while(frontQ.size() > 0 && endQ.size() > 0) {
+            Queue<Integer> curQ;
+            int D1[], D2[];
+            if(times % 2 == 1) {
+                curQ = frontQ;
+                D1 = d1;
+                D2 = d2;
+            } else {
+                curQ = endQ;
+                D1 = d2;
+                D2 = d1;
             }
+            
+            int u = curQ.poll();
+            for(int nxt : g[u]) {
+                if(D1[nxt] == INF && D2[nxt] == INF) {
+                    D1[nxt] = 1 + D1[u];
+                    curQ.add(nxt);
+                    continue;
+                }
+                
+                if(D2[nxt] != INF) {
+                    res = Math.min(res, D1[u] + D2[nxt]);
+                }
+                
+            }
+            
+            times++;
         }
+        
         return res == INF ? 0 : res;
     }
     
