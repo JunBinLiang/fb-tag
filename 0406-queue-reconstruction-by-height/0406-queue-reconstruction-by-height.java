@@ -17,7 +17,6 @@ class Solution {
             i = j - 1;
         }
         
-        
         for(int i = 0; i < people.length; i++) {
             people[i] = res.get(i);
         }
