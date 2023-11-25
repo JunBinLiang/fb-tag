@@ -13,7 +13,6 @@ class Solution {
             }
             prefix *= nums[i];
             res = Math.max(res, prefix);
-            //System.out.println(prefix + "  " + neg + " " + pos);
             if(prefix > 0) {
                 if(pos == 0) {
                     pos = prefix;
