@@ -24,7 +24,6 @@ class Solution {
         while(pq.size() > 0) {
             int p[] = pq.poll();
             int r = p[0], c = p[1], h = p[2];
-            //System.out.println(r + " " + c + " " + h);
             for(int d[] : dir) {
                 int newr = r + d[0], newc = c + d[1];
                 if(newr < 0 || newr >= n || newc < 0 || newc >= m || vis[newr][newc]) continue;
