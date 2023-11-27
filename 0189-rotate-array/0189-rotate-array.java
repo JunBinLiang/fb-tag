@@ -4,7 +4,6 @@ class Solution {
         k %= n;
         if(k <= n - k) {
             reverse(nums, 0, n - k - 1);
-            //System.out.println(Arrays.toString(nums));
             for(int i = 0; i < k; i++) {
                 int t = nums[i];
                 nums[i] = nums[n - k + i];
