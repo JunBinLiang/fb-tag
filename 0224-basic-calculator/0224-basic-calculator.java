@@ -30,8 +30,6 @@ class Solution {
             }
         }
         
-        //System.out.println(list);
-        
         long x = dfs(match, list, 0, list.size() - 1, 1);
         return (int)(x);
     }
