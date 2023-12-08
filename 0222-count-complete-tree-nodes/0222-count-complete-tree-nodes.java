@@ -22,9 +22,6 @@ class Solution {
             h++;
         }
         
-        //System.out.println(h);
-
-        
         int l = (int)(Math.pow(2, h - 1)), r = (int)(Math.pow(2, h)) - 1;
         int res = 0;
         
