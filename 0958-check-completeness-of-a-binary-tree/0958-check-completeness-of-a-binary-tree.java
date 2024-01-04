@@ -36,7 +36,7 @@ class Solution {
                     q.add(u.right);
                 }
             }
-            if(empty) break;
+            if(empty) break; //last level
         }
         
         while(q.size() > 0) {
