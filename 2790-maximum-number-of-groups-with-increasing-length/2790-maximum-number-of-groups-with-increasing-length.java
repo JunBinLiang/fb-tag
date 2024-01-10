@@ -9,6 +9,4 @@ class Solution {
         }
         return res;
     }
-    
-    
 }
