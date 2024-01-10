@@ -30,9 +30,6 @@ class Solution {
         
     }
     
-    //1 2 3 4 5
-    //1 2 3 4 5 6
-    
     public ListNode reverse(ListNode head) {
         ListNode pre = null, cur = head;
         while(cur != null) {
